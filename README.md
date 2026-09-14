@@ -17,7 +17,7 @@ Minecraftのバージョンに合うものを選んでください。
 ## 導入
 
 1. Minecraft **Java Edition 1.21.11** に Fabric Loader **0.18.4以降**を導入します。
-2. 1.21.11用の **Fabric API** と `luna-chat-translator-0.3.0.jar` を、使用するインスタンスの `mods` フォルダに入れます。旧バージョンのJARは外してください。`-sources.jar` は入れません。
+2. 1.21.11用の **Fabric API** と `luna-chat-translator-1.21.11-0.3.0.jar` を、使用するインスタンスの `mods` フォルダに入れます。旧バージョンのJARは外してください。`-sources.jar` は入れません。
 3. 同じPCにCodex CLIをインストールします。WindowsはCodexアプリ付属の `codex.exe` またはnpm版のネイティブ実行ファイルを自動検出します。
 4. ゲーム内で **`/lunachat login`** を実行し、開いた公式ログイン画面で各自のアカウントにログインします。
 5. **`/lunachat status`** でログイン状態を確認します。
@@ -111,7 +111,7 @@ JDK 21をインストールし、`JAVA_HOME` を設定して実行します。
 .\gradlew.bat build
 ```
 
-出力は `build/libs/luna-chat-translator-0.3.0.jar`。macOS/Linuxでは `./gradlew build` です。単体テストは `./gradlew test`、Minecraft内の入力・表示テストは `./gradlew runClientGameTest`。後者はキャッシュを使い、オンライン翻訳を実行しません。開発用クライアントは `./gradlew runClient`。
+出力は `build/libs/luna-chat-translator-1.21.11-0.3.0.jar`。macOS/Linuxでは `./gradlew build` です。単体テストは `./gradlew test`、Minecraft内の入力・表示テストは `./gradlew runClientGameTest`。後者はキャッシュを使い、オンライン翻訳を実行しません。開発用クライアントは `./gradlew runClient`。
 
 Windowsで `GradleWorkerMain` が見つからないエラーが出る場合は、プロジェクトと `GRADLE_USER_HOME` を英数字のみのパスに置いて再実行してください。この環境では日本語パスでGradleのテスト用プロセス起動に問題が出たため、英数字パスの検証環境を使用しています。
 

@@ -4,7 +4,7 @@ plugins {
 }
 version = '0.3.0'
 group = 'dev.lunachat'
-base { archivesName = 'luna-chat-translator' }
+base { archivesName = 'luna-chat-translator-1.21.11' }
 repositories { mavenCentral(); maven { url = 'https://maven.terraformersmc.com/releases/' } }
 dependencies {
     minecraft 'com.mojang:minecraft:1.21.11'

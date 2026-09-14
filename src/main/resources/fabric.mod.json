@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "luna_chat",
   "version": "${version}",
-  "name": "Luna Chat Translator",
+  "name": "Luna Chat Translator (Minecraft 1.21.11)",
   "description": "Translate and replace chat locally using your own Codex login.",
   "environment": "client",
   "entrypoints": { "client": ["dev.lunachat.LunaChatClient"], "modmenu": ["dev.lunachat.ModMenuIntegration"] },
