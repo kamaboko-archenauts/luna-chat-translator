@@ -1,0 +1,24 @@
+.gradle/
+.tools/
+build/
+run/
+.idea/
+*.iml
+luna-chat-private/
+
+# Local data and credentials
+.codex/
+.agents/
+.env
+.env.*
+*.pem
+*.key
+**/auth.json
+**/credentials.json
+**/logs/
+**/screenshots/
+**/config/luna-chat.json
+*.log
+# Only the current audited binary is distributed
+dist/*
+!dist/luna-chat-translator-0.3.0.jar

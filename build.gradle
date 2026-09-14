@@ -1,0 +1,28 @@
+plugins {
+    id 'fabric-loom' version '1.14.10'
+    id 'maven-publish'
+}
+version = '0.3.0'
+group = 'dev.lunachat'
+base { archivesName = 'luna-chat-translator' }
+repositories { mavenCentral(); maven { url = 'https://maven.terraformersmc.com/releases/' } }
+dependencies {
+    minecraft 'com.mojang:minecraft:1.21.11'
+    mappings 'net.fabricmc:yarn:1.21.11+build.6:v2'
+    modImplementation 'net.fabricmc:fabric-loader:0.18.4'
+    modImplementation 'net.fabricmc.fabric-api:fabric-api:0.141.4+1.21.11'
+    modCompileOnly 'com.terraformersmc:modmenu:17.0.0'
+    modLocalRuntime 'com.terraformersmc:modmenu:17.0.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+java { toolchain.languageVersion = JavaLanguageVersion.of(21); withSourcesJar() }
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8'; options.release = 21 }
+processResources { inputs.property 'version', project.version; filesMatching('fabric.mod.json') { expand version: project.version } }
+test { useJUnitPlatform() }
+fabricApi.configureTests {
+    createSourceSet = true
+    modId = 'luna_chat_test'
+    enableGameTests = false
+    enableClientGameTests = true
+}
