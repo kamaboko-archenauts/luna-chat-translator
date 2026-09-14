@@ -4,7 +4,15 @@
 
 ## ダウンロード
 
-[MOD v0.3.0をダウンロード](dist/luna-chat-translator-0.3.0.jar?raw=true)
+Minecraftのバージョンに合うものを選んでください。
+
+| Minecraft Java版 | ローダー | MODバージョン | ダウンロード・変更内容 |
+|---|---|---|---|
+| **1.21.11** | Fabric | **0.3.0** | [1.21.11向けリリース](../../releases/tag/mc1.21.11-v0.3.0) |
+
+[対応バージョン・リリース一覧](../../releases)
+
+今後は対応するMinecraftバージョンごとにこの表へ追加します。同じMinecraft版でMODを更新した場合も、過去の配布物はReleasesに残します。タグは `mc<ゲーム版>-v<MOD版>` の形式です。
 
 ## 導入
 
