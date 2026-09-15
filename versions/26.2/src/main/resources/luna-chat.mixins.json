@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "dev.lunachat.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": ["ChatHudMixin", "ChatScreenMixin", "TextFieldAccessor"],
+  "injectors": { "defaultRequire": 1 }
+}

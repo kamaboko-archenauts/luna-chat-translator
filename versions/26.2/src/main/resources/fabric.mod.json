@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "luna_chat",
+  "version": "${version}",
+  "name": "Luna Chat Translator (Minecraft 26.2)",
+  "description": "Translate and replace chat locally using your own Codex login.",
+  "environment": "client",
+  "entrypoints": { "client": ["dev.lunachat.LunaChatClient"], "modmenu": ["dev.lunachat.ModMenuIntegration"] },
+  "mixins": ["luna-chat.mixins.json"],
+  "depends": { "fabricloader": ">=0.19.3", "minecraft": "26.2", "java": ">=25", "fabric-api": "*" }
+}

@@ -22,3 +22,4 @@ luna-chat-private/
 # Only the current audited binary is distributed
 dist/*
 !dist/luna-chat-translator-1.21.11-0.3.0.jar
+!dist/luna-chat-translator-26.2-0.3.0.jar

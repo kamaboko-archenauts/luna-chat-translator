@@ -1,4 +1,4 @@
-# Luna Chat Translator — Fabric 1.21.11 / 26.2
+# Luna Chat Translator — Fabric 26.2
 
 自分の画面に表示されるチャットを、各自のCodexログインと `gpt-5.6-luna` で日本語に翻訳するクライアント専用MODです。翻訳結果は本文と置き換えて表示します。サーバーへの導入は不要です。
 
@@ -8,24 +8,23 @@ Minecraftのバージョンに合うものを選んでください。
 
 | Minecraft Java版 | ローダー | MODバージョン | ダウンロード・変更内容 |
 |---|---|---|---|
-| **1.21.11** | Fabric | **0.3.0** | [1.21.11向けリリース](../../releases/tag/mc1.21.11-v0.3.0) |
-| **26.2** | Fabric | **0.3.0** | [26.2向けリリース](../../releases/tag/mc26.2-v0.3.0) |
+| **26.2** | Fabric | **0.3.0** | [26.2向けリリース](../../../../releases/tag/mc26.2-v0.3.0) |
 
-[対応バージョン・リリース一覧](../../releases)
+[対応バージョン・リリース一覧](../../../../releases)
 
 今後は対応するMinecraftバージョンごとにこの表へ追加します。同じMinecraft版でMODを更新した場合も、過去の配布物はReleasesに残します。タグは `mc<ゲーム版>-v<MOD版>` の形式です。
 
-26.2版の導入・開発手順は [26.2版の説明](versions/26.2/README.md) を参照してください。以下の導入手順とルートのソースは1.21.11版用です。対応するJARを1つだけ導入してください。
+Minecraft 26.2はJava 25が必要です。1.21.11用JARとは互換性がないため、対応するファイルだけを導入してください。
 
 ## 導入
 
-1. Minecraft **Java Edition 1.21.11** に Fabric Loader **0.18.4以降**を導入します。
-2. 1.21.11用の **Fabric API** と `luna-chat-translator-1.21.11-0.3.0.jar` を、使用するインスタンスの `mods` フォルダに入れます。旧バージョンのJARは外してください。`-sources.jar` は入れません。
+1. Minecraft **Java Edition 26.2** に Fabric Loader **0.19.3以降**を導入します。
+2. 26.2用の **Fabric API** と `luna-chat-translator-26.2-0.3.0.jar` を、使用するインスタンスの `mods` フォルダに入れます。旧バージョンのJARは外してください。`-sources.jar` は入れません。
 3. 同じPCにCodex CLIをインストールします。WindowsはCodexアプリ付属の `codex.exe` またはnpm版のネイティブ実行ファイルを自動検出します。
 4. ゲーム内で **`/lunachat login`** を実行し、開いた公式ログイン画面で各自のアカウントにログインします。
 5. **`/lunachat status`** でログイン状態を確認します。
 
-**Mod Menu 17.0.0（1.21.11用）**も導入すると、「Mods → Luna Chat Translator → 設定」から操作できます。Mod Menuがなくても `/lunachat` で同じ画面を開けます。0.1.0からの更新では既存のログインを引き継ぎます。
+**Mod Menu 20.0.2（26.2用）**も導入すると、「Mods → Luna Chat Translator → 設定」から操作できます。Mod Menuがなくても `/lunachat` で同じ画面を開けます。0.1.0からの更新では既存のログインを引き継ぎます。
 
 MODは専用のローカル認証領域を使用します。普段のCodex CLIでログイン済みの場合も、このMOD用に一度ログインしてください。Lunaを利用できるアカウントが必要です。別モデルへの自動変更は行いません。
 
@@ -108,16 +107,13 @@ Codexが見つからない場合、`codexExecutable` に `codex.exe` の絶対�
 
 ## ビルド
 
-26.2版のソースは `versions/26.2` に分けています。Java 25を設定し、そのディレクトリで `./gradlew build` を実行してください。26.2版はGradle 9.5.1・Loom 1.17.21・Fabric API 0.160.0+26.2を使います。
-
-
-JDK 21をインストールし、`JAVA_HOME` を設定して実行します。
+JDK 25をインストールし、`JAVA_HOME` を設定して実行します。
 
 ```powershell
 .\gradlew.bat build
 ```
 
-出力は `build/libs/luna-chat-translator-1.21.11-0.3.0.jar`。macOS/Linuxでは `./gradlew build` です。単体テストは `./gradlew test`、Minecraft内の入力・表示テストは `./gradlew runClientGameTest`。後者はキャッシュを使い、オンライン翻訳を実行しません。開発用クライアントは `./gradlew runClient`。
+出力は `build/libs/luna-chat-translator-26.2-0.3.0.jar`。macOS/Linuxでは `./gradlew build` です。単体テストは `./gradlew test`、Minecraft内の入力・表示テストは `./gradlew runClientGameTest`。後者はキャッシュを使い、オンライン翻訳を実行しません。開発用クライアントは `./gradlew runClient`。
 
 Windowsで `GradleWorkerMain` が見つからないエラーが出る場合は、プロジェクトと `GRADLE_USER_HOME` を英数字のみのパスに置いて再実行してください。この環境では日本語パスでGradleのテスト用プロセス起動に問題が出たため、英数字パスの検証環境を使用しています。
 
@@ -125,6 +121,6 @@ Windowsで `GradleWorkerMain` が見つからないエラーが出る場合は�
 
 ## 参照
 
-- [Fabric 1.21.11](https://www.fabricmc.net/2025/12/05/12111.html)
+- [Fabric 26.2](https://www.fabricmc.net/2025/12/05/12111.html)
 - [Codex App Server](https://learn.chatgpt.com/docs/app-server)
 - [Codex Authentication](https://learn.chatgpt.com/docs/auth)
